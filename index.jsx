@@ -1,7 +1,6 @@
 import React from "react";
 import  ReactDOM from "react-dom";
+import Component from "./Component.js";
 
-const hello = () =>  {
-    return <div>hsiuoefhosi</div>
-}
- ReactDOM.render(<hello />, document.getElementById("root"));
+
+ ReactDOM.render(<Component />, document.getElementById("root"));
