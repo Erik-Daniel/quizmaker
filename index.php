@@ -9,6 +9,8 @@
 </head>
 <body>
     <div id='root'></div>
-    <script src='app.js'></script>
+
+    <script  src='/quizmaker/app.js'></script>
+
 </body>
 </html>

@@ -1,8 +1,8 @@
 import react from 'react';
 import React from 'react'
 import{ useState, useEffect} from 'react'
-import "./styles/headerStyle.css"
-
+import "/styles/headerStyle.css"
+import {Link} from 'react-router-dom'
 export default function Header() {
     const loggedIn = [
         {
@@ -16,14 +16,16 @@ export default function Header() {
 
             useEffect(() => {
 
-                fetch('data.php').then(
+                fetch('/quizmaker/data.php').then(
                     function(response) {
                         return response.json();
                     }
                 ).then(function(data) {
-                    console.log(data);
+                    console.log(data)
                     setUser(prev => ({log: data, ...prev.user}));
                 });
+
+                return(() => {})
             },[]);
         
     
@@ -32,8 +34,8 @@ export default function Header() {
     return (
         <div className='header'>
             <ul className='header-ul'>
-                {getUser.log ? <li>Login</li> : <><li><button>Signup</button></li> <li><button>Login</button></li></>}
-
+                {getUser.log ? <li>Login</li> : <><li><Link to='/quizmaker/index.php/signup'><button>Signup</button></Link></li> <li><button>Login</button></li></>}
+                
                 
 
             </ul>
